@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding: 0;}
+		.banner{
+			width: 600px;
+			height: 400px;
+			margin:0 auto;
+			border:1px solid #ccc;
+			position: relative;
+			overflow: hidden;
+		}
+		.left,.right{
+			width: 40px;
+			height: 60px;
+			background: rgba(0,0,0,0.5);
+			text-align: center;
+			line-height: 60px;
+			position: absolute;
+			top: 50%;
+			margin-top: -30px;
+			font-size: 26px;
+			color: white;
+		}
+		.left{
+			left: 0;
+		}
+		.right{
+			right: 0;
+		}
+		.next-enter{
+			left:600px !important;
+			opacity: 0;
+		}
+		.next-leave-to{
+			left:-600px !important;
+			opacity: 0;
+		}
+		.next-enter-active,.next-leave-active{
+			transition: 0.35s;
+		}
+		.pre-enter{
+			left:-600px !important;
+			opacity: 0;
+		}
+		.pre-leave-to{
+			left:600px !important;
+			opacity: 0;
+		}
+		.pre-enter-active,.pre-leave-active{
+			transition: 0.35s;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<lee></lee>
+	</div>
+	<template id="lee">
+		<div class="banner">
+			<div style="position: relative;">
+				<transition :name='type' v-for='(i,$index) in arr'>
+					<div style="width: 600px;height: 400px;float: left;position: absolute;left: 0;top: 0;" v-show='index==$index'>
+						<img :src="i" alt="" style="width: 600px;height: 400px;">
+					</div>
+				</transition>
+			</div>
+			<div class="left" @click='show'><</div>
+			<div class="right" @click='show2'>></div>
+		</div>
+	</template>
+	<script src="js/vue.js"></script>
+	<script>
+		Vue.component('lee',{
+			template:'#lee',
+			methods:{
+				show(){
+					this.type='pre',
+					this.index--
+					if(this.index<=-1){
+						this.index=2
+					}
+				},
+				show2(){
+					this.type='next',
+					this.index++
+					if(this.index>=3){
+						this.index=0
+					}
+				}
+			},
+			data(){
+				return{
+					type:'pre',
+					index:0,
+					arr:[
+						'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2471845590,913308006&fm=26&gp=0.jpg',
+						'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567606406082&di=287cf48f7149f9bde192937df5ff57aa&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201412%2F25%2F20141225204152_aYEc3.jpeg',
+						'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567606406079&di=9f581c52b3223abe89d1686bb3275af8&imgtype=0&src=http%3A%2F%2Fpic31.nipic.com%2F20130724%2F3822951_160056763000_2.jpg'
+					]
+				}
+			}
+		})
+		new Vue({
+			el:'#box',
+		})
+	</script>
+</body>
+</html>

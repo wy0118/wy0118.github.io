@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding: 0;}
+		.first-enter,.first-leave-to{
+			top:120px !important;
+			opacity: 0;
+		}
+		.first-enter-active,.first-leave-active{
+			transition: 0.35s;
+		}
+		.second-enter,.second-leave-to{
+			left:-100px !important;
+			opacity: 0;
+		}
+		.second-enter-active,.second-leave-active{
+			transition: 0.35s;
+		}
+		.third-enter,.third-leave-to{
+			top:120px !important;
+			opacity: 0;
+		}
+		.third-enter-active,.third-leave-active{
+			transition: 0.35s;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<lee></lee>
+	</div>
+	<template id="lee">
+		<div style="position:relative;">
+			<div style="width: 100%;height: 50px;line-height: 50px;background: black;color: white;text-align: center;" @click='first_show'>首页</div>
+			<transition :name='type'>
+				<div style="min-height: 100px;background:black;position: absolute;top: 50px;left: 0;width: 100%;z-index: 2;" v-show='first_type'>
+					<div v-for='i in arr' style="height: 40px;line-height: 40px;text-align: center;color: white;border-bottom: 1px solid #ccc;position: relative;font-size: 20px;" @click='second_show(i.arr)'>{{i.title}} <span style="position: absolute;top: 0;right: 20px;color: white;" v-if='i.arr.length'>></span></div>
+				</div>
+			</transition>
+			<transition name='third'>
+				<div style="min-height: 150px;background: black;position: absolute;top: 50px;left: 0;width: 100%;" v-show='second_type'>
+					<div style="height: 40px;line-height: 40px;text-align: center;color: white;border-bottom: 1px solid #ccc;position: relative;width: 100%;" @click='third_show'>返回上一级</div>
+					<div v-for='i in a_arr' style="height: 40px;line-height: 40px;text-align: center;color: white;border-bottom: 1px solid #ccc;position: relative;">{{i}}</div>
+				</div>
+			</transition>
+		</div>
+	</template>
+	<script src="js/vue.js"></script>
+	<script>
+		Vue.component('lee',{
+			template:'#lee',
+			methods:{
+				first_show(){
+					if(this.second_type){
+						this.second_type = false
+					}else{
+						this.type = 'first'
+						this.first_type=!this.first_type
+					}
+				},
+				second_show(arr){
+					this.type='second'
+					this.first_type=false;
+					this.third_type=true
+					this.a_arr=arr
+					setTimeout(()=>{
+						this.second_type=true
+					},200)
+				},
+				third_show(){
+					this.third_type=false
+					this.first_type=true;
+				}
+			},
+			data(){
+				return{
+					type:'first',
+					first_type:false,
+					second_type:false,
+					third_type:false,
+					a_arr:[],
+					arr:[
+						{title:'首页',arr:[]},
+						{title:'列表',arr:['list','tab']},
+						{title:'产品',arr:[]},
+						{title:'生产',arr:['过程','流程','成品']}
+					]
+				}
+			}
+		})
+		new Vue({
+			el:'#box',
+		})
+	</script>
+</body>
+</html>
