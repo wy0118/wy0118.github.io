@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>个人简历</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+
+	<body class="single single-post postid-1817 single-format-standard custom-background">
+		<div id="wrap">
+			<div id="header" class="clearfix">
+				<div id="logo" class="sprite">
+					<div class="sprite circle">
+						<a href="myinfo.html" title="个人简历">
+							<img src="img/h8.jpg" alt="logo">
+						</a>
+					</div>
+				</div>
+				<div class="mod-right">
+					<h1><a href="myinfo.html" title="旅行的意义">个人资料</a></h1>
+					<div class="description">
+						王亚 </div>
+					<div class="tools">
+						<div class="menu-%e8%8f%9c%e5%8d%951-container">
+							<ul id="header_menu" class="clearfix">
+								<li id="menu-item-1879" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1879">
+									<a href="index.html">首页</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="main">
+				<div class="mod-map">
+				</div>
+				<div class="post-date">
+					<span class="icon day">17</span>
+					<span class="week">
+					<a href="myinfo.html">Sunday</a>
+				</span>
+					<span class="date">January 01th  1999</span>
+				</div>
+				<div class="article-wrap">
+					<div class="article  clearfix">
+						<div class="post-1817 post type-post status-publish format-standard has-post-thumbnail hentry category-2 tag-werereqrwaf tag-1 tag-2 tag-3 tag-9 tag-10 box">
+							<div class="post-title">
+								<h3 style="text-align: center;">个人资料</h3>
+							</div>
+							<div class="post-text-body">
+								<p><img class="aligncenter" alt="cry10" src="img/cry10.jpg" width="600" height="375" /></p>
+								<blockquote>
+									<p></p>
+								</blockquote>
+
+								<h2></h2>
+							</div>
+						</div>
+						<div class="mod-tags">
+							<div class="hd">
+								<span class="icon tag"></span>
+							</div>
+						</div>
+						<div id="notes">
+						</div>
+					</div>
+					<div class="article-btm">
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="sprite navigation">
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$('body').on('click', '.post-main', function() {
+				if(this.getAttribute('data-type') != 'audio') {
+					location.href = this.getAttribute('data-url');
+				}
+			});
+
+			$('.pages').hover(function() {
+				$('.pages ul').stop().show('fast');
+			}, function() {
+				$('.pages ul').stop().hide('fast');
+			});
+
+			$('.search').hover(function() {
+				$('.search .ipt-txt').stop().animate({
+					width: 110
+				});
+			}, function() {
+				if($('.search .ipt-txt:focus').length == 0) {
+					$('.search .ipt-txt').stop().animate({
+						width: 1
+					});
+				}
+			});
+			$('.search .ipt-txt').blur(function() {
+				$('.search .ipt-txt').stop().animate({
+					width: 1
+				});
+			});
+		</script>
+	</body>
+
+</html>

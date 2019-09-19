@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>我的项目</title>
+
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	</head>
+
+	<body class="single single-post postid-1817 single-format-standard custom-background">
+		<div id="wrap">
+			<div id="header" class="clearfix">
+				<div id="logo" class="sprite">
+					<div class="sprite circle">
+						<a href="xianginfo.html" title="我的项目">
+							<img src="img/h8.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div class="mod-right">
+					<h1><a href="xianginfo.html" title="我的项目">我的项目</a></h1>
+
+					<div class="tools">
+						<div class="menu-%e8%8f%9c%e5%8d%951-container">
+							<ul id="header_menu" class="clearfix">
+								<li id="menu-item-1879" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1879">
+									<a href="index.html">首页</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="main">
+				<div class="mod-map">
+				</div>
+				<div class="post-date">
+					<span class="icon day">14</span>
+					<span class="week">
+					<a href="xianginfo.html">Monday</a>
+				</span>
+					<span class="date">October 2th  22019</span>
+				</div>
+				<div class="article-wrap">
+					<div class="article  clearfix">
+						<div class="post-1817 post type-post status-publish format-standard has-post-thumbnail hentry category-2 tag-werereqrwaf tag-1 tag-2 tag-3 tag-9 tag-10 box">
+							<div class="post-title">
+								<h3>项目</h3>
+							</div>
+							<div class="post-text-body">
+
+								<blockquote>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="food/index.html" target="_blank" style="color: black;">1.美食堂</a>
+									</div>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="vue/index.html" target="_blank" style="color: black;">2.航空模板</a>
+									</div>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="weeks/index.html" target="_blank" style="color: black;">3.牛记生鲜</a>
+									</div>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="app/dist/index.html" target="_blank" style="color: black;">4.手风琴例子</a>
+									</div>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="transitioned/lun.html" target="_blank" style="color: black;">5.轮播图例子</a>
+									</div>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="transitioned/transitoned.html" target="_blank" style="color: black;">6.导航动画效果</a>
+									</div>
+									<div style="height: 30px;font-size: 16px;">
+										<a href="pipi/index.html" target="_blank" style="color: black;">7.皮皮虾</a>
+									</div>
+								</blockquote>
+
+								<h2></h2>
+							</div>
+						</div>
+						<div class="mod-tags">
+							<div class="hd">
+								<span class="icon tag"></span>
+							</div>
+						</div>
+						<div id="notes">
+						</div>
+					</div>
+					<div class="article-btm">
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="sprite navigation">
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$('body').on('click', '.post-main', function() {
+				if(this.getAttribute('data-type') != 'audio') {
+					location.href = this.getAttribute('data-url');
+				}
+			});
+
+			$('.pages').hover(function() {
+				$('.pages ul').stop().show('fast');
+			}, function() {
+				$('.pages ul').stop().hide('fast');
+			});
+
+			$('.search').hover(function() {
+				$('.search .ipt-txt').stop().animate({
+					width: 110
+				});
+			}, function() {
+				if($('.search .ipt-txt:focus').length == 0) {
+					$('.search .ipt-txt').stop().animate({
+						width: 1
+					});
+				}
+			});
+			$('.search .ipt-txt').blur(function() {
+				$('.search .ipt-txt').stop().animate({
+					width: 1
+				});
+			});
+		</script>
+	</body>
+
+</html>
